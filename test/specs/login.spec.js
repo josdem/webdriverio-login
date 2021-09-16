@@ -1,8 +1,10 @@
 const LoginPage = require("../pageobjects/login.page")
+const HomePage = require("../pageobjects/home.page")
 
 describe("should login", () => {
   it("send credentials", async () => {
     await LoginPage.open()
     await LoginPage.login()
+    await HomePage.validateMessage()
   })
 })
