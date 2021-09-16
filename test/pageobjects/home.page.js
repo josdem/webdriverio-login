@@ -5,7 +5,7 @@ class Home {
 
   async validateMessage() {
     const message = await this.messageParagraph
-    expect(message).toBeExisting()
+    await expect(message).toBeExisting()
   }
 }
 

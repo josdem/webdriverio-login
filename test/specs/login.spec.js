@@ -6,5 +6,10 @@ describe("should login", () => {
     await LoginPage.open()
     await LoginPage.login()
     await HomePage.validateMessage()
+    await browser.newWindow("http://localhost:8080/", {
+      windowName: "Reactive Webflux Security",
+    })
+    console.log(await browser.getTitle())
+    await HomePage.validateMessage()
   })
 })
