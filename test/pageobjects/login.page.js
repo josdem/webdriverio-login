@@ -7,6 +7,9 @@ class Login {
   get passwordInput() {
     return $('input[id="password"]')
   }
+  get singInButton() {
+    return $('button[class="btn btn-lg btn-primary btn-block"]')
+  }
 
   async login() {
     const username = await this.usernameInput
@@ -15,6 +18,9 @@ class Login {
     const password = await this.passwordInput
     expect(password).toBeExisting()
     await password.setValue(properties.password)
+    const submit = await this.singInButton
+    expect(submit).toBeExisting()
+    await submit.click()
   }
 
   async open() {
